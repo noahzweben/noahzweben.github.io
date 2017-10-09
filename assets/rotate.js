@@ -18,7 +18,7 @@ function spinIntroBlock(){
 	inc = inc % 360;
 	// css_text +="linear-gradient("+ (-135-inc) +"deg, rgba(0,0,0,.1),rgba(0,0,0,.8)),"; //black
 	css_text += "linear-gradient("+(180+inc)+"deg, rgba(100,100,0,0),rgba(255,255,0,.2)),"; //green
-	css_text += "linear-gradient("+(45+inc)+"deg, rgba(100,0,0,0),rgba(255,0,0,.2)),"; //red
+	css_text += "linear-gradient("+(45+inc)+"deg, rgba(100,0,0,0),rgba(255,0,0,.3)),"; //red
 	css_text += "linear-gradient("+(-45-inc)+"deg,"+hexToRgba("#ffa100",.98)+","+hexToRgba("#ff9d00",.95)+")"; //blue/purp
 	// css_text += "url('assets/triangles.jpg')";
 	$(".introBlock").css("background-image",css_text);
