@@ -5,8 +5,9 @@ gray2: #28323a;
 lightgray: #edf2ff
 mediumgray: #dee2e2;
 
-nice blue: #4175fc;
-nice orange: #ff9d00;
+nice blue: #0A1EDF;
+light blue; #4175fc
+nice orange: #ff9d00, #ffa100, ffb200;
 */
 
 @font-face {
@@ -30,7 +31,7 @@ nice orange: #ff9d00;
 
 body{
 	font-family: Colfax-Regular;
-	color: #28323a;
+	color: #22262a;
 	background-color: black;
 }
 .navbar-custom{
@@ -38,40 +39,66 @@ body{
 	height: 50px;
 }
 .introBlock {
-	height: 550px;
-	padding-left: 50px;
+	background-color: #ff9d00;
+	/*padding-left: 50px;*/
 	padding-top: 200px;
 	z-index: 1;
+	border-bottom: 20px solid #ff7700
 }
 
 .name{
 	color: #edf2ff;
-	font-family: Colfax-Regular;
-	font-weight: 900;
-	font-size: 10em;
-	line-height: 130px;
+	font-family: Raleway;
+	font-size: 8em;
+	line-height: 100px;
 	margin-top: 20px;
+	margin-left: 50px;
 	/*opacity: 1;*/
 	}
 
+
+.myFace{
+	/*height: 550px;*/
+	max-width: 100%;
+    -webkit-filter: grayscale(100%);  Safari 6.0 - 9.0 
+    filter: grayscale(100%);
+}
+
+.coolLine{
+	position: absolute;
+	bottom: 0px;
+}
+
 .title{
-	font-family: Colfax-Light;
-	font-weight: 500;
-	font-size: 3em;
+	font-family: Raleway;
+	font-size: 4em;
 	margin: 40px;
 	color: #4175fc;
 }
 
 .aboutBlock{
-	height: 1000px;
-	background-color: #edf2ff;
-	/*background-image: linear-gradient(rgba(255,255,255,.99), rgba(255,255,255,.93)),url("triangles.jpg");*/
+	height: 500px;
+	color: #ecf0f1;
+	border-bottom: 20px solid #231b5b;
+	font-family: Helvetica;
+	padding-top: 30px;
+	/*background-color: #12037f;# 0c015b*/
+	background-image: 
+		linear-gradient(135deg,rgba(0,0,0,.8),rgba(0,0,0,.5)),
+		linear-gradient(0deg,rgba(18, 3, 127,.99),rgba(12, 1, 91,.97));
 }
 
-.myFace{
-	max-width: 300px;
-	border: 3px solid #dee2e2;
+
+.redFiller{
+	background-color: #a0034f;
+	/*border-right: 20px solid #a00332;*/
+	/*background-color: #bc0903;*/
+	min-height: 100px;
+	background-image: 
+		linear-gradient(130deg,rgba(0,0,0,.3),rgba(0,0,0,.1)),
+		linear-gradient(0deg,rgba(160, 3, 79,1),rgba(160, 3, 50,1));
 }
+
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -82,4 +109,19 @@ body{
                                   supported by Chrome and Opera */
 }
 
+.aboutText{
+	font-family: Raleway;
+	font-size: 2em;
+	font-weight: 300;
+}
 
+.artBlock{
+}
+
+.carousel-item img{
+	max-height: 600px;
+}
+
+.noPad {
+	padding: 0px !important;
+}
