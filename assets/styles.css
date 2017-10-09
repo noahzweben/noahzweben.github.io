@@ -121,8 +121,15 @@ body{
 	/*color: #3ca365;*/
 	color: #6a727a;
 }
+
+/*.carousel{
+	background-color: #d2dce0;
+	padding: 20px;
+}*/
+
 .carousel-item img{
 	max-height: 500px;
+	border: 10px solid #22262a;
 }
 
 .filler2{
@@ -130,7 +137,8 @@ body{
 	border-bottom: 20px solid #3ca365;
 	background-image: 
 		linear-gradient(130deg,rgba(20,10,70,.5),rgba(20,10,70,.4)),
-		linear-gradient(0deg,#00d84b,#00d84b);
+		linear-gradient(0deg,rgba(0, 216, 75,.96),rgba(0, 216, 75,.94)),
+		url("zigzag.jpg");
 }
 
 
