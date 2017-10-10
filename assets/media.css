@@ -12,6 +12,10 @@
 		border-bottom: 20px solid #ff7700;
 	}
 
+	.name{
+		font-size: 6em;
+	}
+
 }
 
 @media screen and (max-width: 768px){
