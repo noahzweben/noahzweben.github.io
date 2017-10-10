@@ -74,6 +74,9 @@ body{
 .myFace{
 	/*height: 550px;*/
 	max-width: 100%;
+}
+
+.gray{
     -webkit-filter: grayscale(100%);  Safari 6.0 - 9.0 
     filter: grayscale(100%);
 }
@@ -174,7 +177,7 @@ body{
 
 
 
-.mustache{
+/*.mustache{
 	display: none;
 	position: absolute;
 	z-index: 1;
@@ -182,10 +185,10 @@ body{
 	width: 25%;
 	height:8%;
 	left: 40%;
-	-ms-transform: rotate(4deg); /* IE 9 */
-    -webkit-transform: rotate(4deg); /* Chrome, Safari, Opera */
+	-ms-transform: rotate(4deg); 
+    -webkit-transform: rotate(4deg);
     transform: rotate(4deg);
-}
+}*/
 
 
 

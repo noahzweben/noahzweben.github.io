@@ -21,7 +21,8 @@ $(document).ready(function(){
 
 	    // console.log(height);
 	if (height >20){
-		$(".mustache").fadeIn(250);
+		$(".myFace").attr("src","assets/face2.png");
+		$(".myFace").removeClass("gray");
 	}
     if (height <= 420){
 	    	$("#nzdawg").css("color", "#ff9d00");
