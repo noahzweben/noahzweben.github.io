@@ -20,7 +20,11 @@ $(document).ready(function(){
 	    var height = $(window).scrollTop();
 
 	    // console.log(height);
-	if (height >20){
+	if (height <25){
+		$(".myFace").attr("src","assets/face.jpg");
+		$(".myFace").addClass("gray");
+	}
+	if (height >25){
 		$(".myFace").attr("src","assets/face2.png");
 		$(".myFace").removeClass("gray");
 	}
