@@ -20,20 +20,19 @@ $(document).ready(function(){
 	    var height = $(window).scrollTop();
 
 	    // console.log(height);
-	    if (height <= 420){
-	    	console.log('here');
+	if (height >20){
+		$(".mustache").fadeIn(250);
+	}
+    if (height <= 420){
 	    	$("#nzdawg").css("color", "#ff9d00");
 	    }
 	   if (height > 420 && height <=965){
-		   	console.log('here2');
 	   	 	$("#nzdawg").css("color", "#4175fc");
 	   }
 	if (height > 965 && height <1500){
-		console.log("here3");
 		$("#nzdawg").css("color", "#3ca365");
 	} 
 	if (height > 1500){
-		console.log("here3");
 		$("#nzdawg").css("color", "#ad0938");
 	} 
 	

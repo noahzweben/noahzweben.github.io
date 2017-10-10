@@ -174,8 +174,18 @@ body{
 
 
 
-
-
+.mustache{
+	display: none;
+	position: absolute;
+	z-index: 1;
+	top: 48%;
+	width: 25%;
+	height:8%;
+	left: 40%;
+	-ms-transform: rotate(4deg); /* IE 9 */
+    -webkit-transform: rotate(4deg); /* Chrome, Safari, Opera */
+    transform: rotate(4deg);
+}
 
 
 
