@@ -1,0 +1,59 @@
+@media screen and (max-width: 975px) and (min-width: 768px){
+	.myFace{
+		margin-top: 60px;
+	}
+}
+
+@media screen and (max-width: 975px){
+	.introName{
+		border: none;
+	}
+	.introBlock{
+		border-bottom: 20px solid #ff7700;
+	}
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 860px){
+	.aboutText{
+		font-size: 1.7em;
+	}
+
+	.name{
+		font-size: 5em;
+	}
+}
+
+@media screen and (max-width: 767px) and (min-width: 500px){
+	.title{
+		font-size: 3em !important;
+	}
+
+	.aboutText{
+		font-size: 1.7em !important;
+	}
+
+}
+
+@media screen and (max-width: 500px){
+.title{
+		font-size: 2em !important;
+	}
+
+	.aboutText{
+		font-size: .8em !important;
+	}
+
+.aboutBlock{
+		height:300px;
+	}
+
+.introName{
+	padding: 0px !important;
+	margin-top: 40px;
+}
+.name{
+	font-size: 2.6em;
+	line-height: 50px;
+}
+}
