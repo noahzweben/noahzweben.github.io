@@ -132,6 +132,7 @@ body{
 .artBlock{
 	background-color: #dce3e5;
 	/*background-color: #abc3c9;*/
+	border-top: 10px solid #3ca365;
 }
 
 .artBlock .title{
