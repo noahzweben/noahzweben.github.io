@@ -137,6 +137,7 @@ body{
 .artBlock .title{
 	/*color: #3ca365;*/
 	color: #6a727a;
+	color: #3ca365;
 }
 
 .carousel{
@@ -148,13 +149,19 @@ body{
 	border: 10px solid #22262a;
 }
 
+.gIcon{
+	background-color: #3ca365 !important;
+}
+
+
 .filler2{
-	min-height: 100px;
-	border-bottom: 20px solid #3ca365;
-	background-image: 
+	min-height: 30px;
+	background-color: #3ca365;
+	/*border-bottom: 20px solid #3ca365;*/
+	/*background-image: 
 		linear-gradient(130deg,rgba(20,10,70,.5),rgba(20,10,70,.4)),
 		linear-gradient(0deg,rgba(0, 216, 75,.96),rgba(0, 216, 75,.94)),
-		url("zigzag.jpg");
+		url("zigzag.jpg");*/
 }
 
 
