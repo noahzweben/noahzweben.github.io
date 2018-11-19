@@ -141,20 +141,18 @@ body{
 	color: #3ca365;
 }
 
-.carousel{
-	margin-bottom: 40px;
+.artRow{
+	padding-bottom: 20px;
 }
 
-.carousel-item img{
-	max-height: 500px;
-	border: 10px solid #22262a;
+.artColumn {
+  padding: 0 4px;
 }
 
-.gIcon{
-	background-color: #3ca365 !important;
+.artColumn img {
+  margin-top: 8px;
+  vertical-align: middle;
 }
-
-
 .filler2{
 	min-height: 30px;
 	background-color: #3ca365;
