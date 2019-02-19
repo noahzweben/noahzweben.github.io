@@ -40,7 +40,12 @@ $(document).ready(function(){
 	if (height > 1500){
 		$("#nzdawg").css("color", "#ad0938");
 	} 
-	
-	 
 	});
+
+
+	$('.artwork').each(function(){
+		$(this).attr("src",$(this).data('src'));
+		$(this).removeClass('d-none');
+		$(this).addClass('d-block');
+	})
 });
