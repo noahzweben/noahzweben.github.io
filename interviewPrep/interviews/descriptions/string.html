@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<meta charset="UTF-8">
+<html>
+<head>
+<title>/Users/noahzweben/Desktop/interviews/linkedlists/Substring.java</title>
+<style>
+.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+.highlight * { font-family: monospace; }
+.highlight { font-size: 90%; }
+.highlight { line-height: normal; }
+.highlight .err { border: none !important }
+.highlight > pre { word-wrap: break-word; white-space: pre-wrap; }
+</style>
+</head>
+<body onload="window.print();">
+<div class="highlight"><pre><span class="lineno">  1</span> <span class="c1">////////////////////////////////////////////////////// Convert integer to binary:</span>
+<span class="lineno">  2</span> <span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+<span class="lineno">  3</span> <span class="kd">class</span> <span class="nc">DecimalBinaryStack</span>
+<span class="lineno">  4</span> <span class="o">{</span>
+<span class="lineno">  5</span>   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> 
+<span class="lineno">  6</span>   <span class="o">{</span> 
+<span class="lineno">  7</span>     <span class="n">Scanner</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+<span class="lineno">  8</span>  
+<span class="lineno">  9</span>     <span class="c1">// Create Stack object</span>
+<span class="lineno"> 10</span>     <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+<span class="lineno"> 11</span>  
+<span class="lineno"> 12</span>     <span class="c1">// User input </span>
+<span class="lineno"> 13</span>     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Enter decimal number: &quot;</span><span class="o">);</span>
+<span class="lineno"> 14</span>     <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+<span class="lineno"> 15</span>  
+<span class="lineno"> 16</span>     <span class="k">while</span> <span class="o">(</span><span class="n">num</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span>
+<span class="lineno"> 17</span>     <span class="o">{</span>
+<span class="lineno"> 18</span>       <span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span><span class="o">;</span>
+<span class="lineno"> 19</span>       <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">d</span><span class="o">);</span>
+<span class="lineno"> 20</span>       <span class="n">num</span> <span class="o">/=</span> <span class="mi">2</span><span class="o">;</span>
+<span class="lineno"> 21</span>     <span class="o">}</span> 
+<span class="lineno"> 22</span>  
+<span class="lineno"> 23</span>     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;\nBinary representation is:&quot;</span><span class="o">);</span>
+<span class="lineno"> 24</span>     <span class="k">while</span> <span class="o">(!(</span><span class="n">stack</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()</span> <span class="o">))</span>
+<span class="lineno"> 25</span>     <span class="o">{</span>
+<span class="lineno"> 26</span>       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">());</span>
+<span class="lineno"> 27</span>     <span class="o">}</span>
+<span class="lineno"> 28</span>     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+<span class="lineno"> 29</span>   <span class="o">}</span>
+<span class="lineno"> 30</span> <span class="o">}</span>
+<span class="lineno"> 31</span> 
+<span class="lineno"> 32</span> <span class="c1">////////////////////////////////////////////////////////////////////////// Substring Iterative</span>
+<span class="lineno"> 33</span> <span class="o">/</span> <span class="n">Returns</span> <span class="kc">true</span> <span class="k">if</span> <span class="n">str1</span><span class="o">[]</span> <span class="n">is</span> <span class="n">a</span> <span class="n">subsequence</span> <span class="n">of</span> <span class="n">str2</span><span class="o">[].</span> <span class="n">m</span> <span class="n">is</span> 
+<span class="lineno"> 34</span> <span class="c1">// length of str1 and n is length of str2</span>
+<span class="lineno"> 35</span> <span class="n">bool</span> <span class="nf">isSubSequence</span><span class="o">(</span><span class="kt">char</span> <span class="n">str1</span><span class="o">[],</span> <span class="kt">char</span> <span class="n">str2</span><span class="o">[],</span> <span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span>
+<span class="lineno"> 36</span> <span class="o">{</span>
+<span class="lineno"> 37</span>    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="c1">// For index of str1 (or subsequence</span>
+<span class="lineno"> 38</span>  
+<span class="lineno"> 39</span>    <span class="c1">// Traverse str2 and str1, and compare current character </span>
+<span class="lineno"> 40</span>    <span class="c1">// of str2 with first unmatched char of str1, if matched </span>
+<span class="lineno"> 41</span>    <span class="c1">// then move ahead in str1</span>
+<span class="lineno"> 42</span>    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">&amp;&amp;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">m</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+<span class="lineno"> 43</span>        <span class="k">if</span> <span class="o">(</span><span class="n">str1</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">==</span> <span class="n">str2</span><span class="o">[</span><span class="n">i</span><span class="o">])</span>
+<span class="lineno"> 44</span>          <span class="n">j</span><span class="o">++;</span>
+<span class="lineno"> 45</span>  
+<span class="lineno"> 46</span>    <span class="c1">// If all characters of str1 were found in str2</span>
+<span class="lineno"> 47</span>    <span class="k">return</span> <span class="o">(</span><span class="n">j</span><span class="o">==</span><span class="n">m</span><span class="o">);</span>
+<span class="lineno"> 48</span> <span class="o">}</span>
+<span class="lineno"> 49</span> <span class="c1">////////////////////////////////////////////////////////// Substring Recursive </span>
+<span class="lineno"> 50</span> 
+<span class="lineno"> 51</span> <span class="n">bool</span> <span class="nf">isSubSequence</span><span class="o">(</span><span class="kt">char</span> <span class="n">str1</span><span class="o">[],</span> <span class="kt">char</span> <span class="n">str2</span><span class="o">[],</span> <span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span>
+<span class="lineno"> 52</span> <span class="o">{</span>
+<span class="lineno"> 53</span>     <span class="c1">// Base Cases</span>
+<span class="lineno"> 54</span>     <span class="k">if</span> <span class="o">(</span><span class="n">m</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+<span class="lineno"> 55</span>     <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+<span class="lineno"> 56</span>  
+<span class="lineno"> 57</span>     <span class="c1">// If last characters of two strings are matching</span>
+<span class="lineno"> 58</span>     <span class="k">if</span> <span class="o">(</span><span class="n">str1</span><span class="o">[</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">==</span> <span class="n">str2</span><span class="o">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">])</span>
+<span class="lineno"> 59</span>         <span class="k">return</span> <span class="nf">isSubSequence</span><span class="o">(</span><span class="n">str1</span><span class="o">,</span> <span class="n">str2</span><span class="o">,</span> <span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">);</span>
+<span class="lineno"> 60</span>  
+<span class="lineno"> 61</span>     <span class="c1">// If last characters are not matching</span>
+<span class="lineno"> 62</span>     <span class="k">return</span> <span class="nf">isSubSequence</span><span class="o">(</span><span class="n">str1</span><span class="o">,</span> <span class="n">str2</span><span class="o">,</span> <span class="n">m</span><span class="o">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">);</span>
+<span class="lineno"> 63</span> 
+<span class="lineno"> 64</span> 
+<span class="lineno"> 65</span> <span class="c1">///////////////////////////////////////// First non-repeated character --&gt; HashMap duh</span>
+<span class="lineno"> 66</span> 
+<span class="lineno"> 67</span> <span class="c1">/////////////// Reverse A String Recursively</span>
+<span class="lineno"> 68</span>   <span class="n">String</span> <span class="nf">reverseRecursively</span><span class="o">(</span><span class="n">String</span> <span class="n">myStr</span><span class="o">){</span>
+<span class="lineno"> 69</span>     <span class="k">if</span> <span class="o">(</span><span class="n">myStr</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="n">myStr</span><span class="o">;</span>
+<span class="lineno"> 70</span>     <span class="k">return</span> <span class="nf">reverseRecursively</span><span class="o">(</span><span class="n">myStr</span><span class="o">.</span><span class="na">subSTring</span><span class="o">(</span><span class="mi">1</span><span class="o">))+</span><span class="n">myStr</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+<span class="lineno"> 71</span>   <span class="o">}</span>
+<span class="lineno"> 72</span> 
+<span class="lineno"> 73</span> <span class="n">String</span> <span class="nf">reverseIteratively</span><span class="o">(</span><span class="n">String</span> <span class="n">myStr</span><span class="o">)</span> <span class="o">{</span>
+<span class="lineno"> 74</span>   <span class="n">String</span> <span class="n">returnStr</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
+<span class="lineno"> 75</span>   <span class="k">for</span> <span class="o">(</span><span class="kt">int</span><span class="o">=</span><span class="n">myStr</span><span class="o">.</span><span class="na">length</span><span class="o">()-</span><span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">&gt;-</span><span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">--)</span> <span class="o">{</span>
+<span class="lineno"> 76</span>     <span class="n">returnStr</span><span class="o">+=</span> <span class="n">myStr</span><span class="o">.</span><span class="na">chartAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+<span class="lineno"> 77</span>   <span class="o">}</span>
+<span class="lineno"> 78</span>   <span class="k">return</span> <span class="n">myStr</span><span class="o">;</span>
+<span class="lineno"> 79</span> 
+<span class="lineno"> 80</span> <span class="o">}</span>
+<span class="lineno"> 81</span> 
+<span class="lineno"> 82</span> <span class="c1">/////////////////////////////////////////////////// is Palindrome</span>
+<span class="lineno"> 83</span> <span class="kt">boolean</span> <span class="nf">isPal</span><span class="o">(</span><span class="n">String</span> <span class="n">myStr</span><span class="o">)</span> <span class="o">{</span>
+<span class="lineno"> 84</span>   <span class="k">if</span> <span class="o">(</span><span class="n">myStr</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="mi">1</span><span class="o">)</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+<span class="lineno"> 85</span>   <span class="k">if</span>  <span class="o">(</span> <span class="n">myStr</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="o">!=</span> <span class="n">myStr</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">myStr</span><span class="o">.</span><span class="na">length</span><span class="o">()-</span><span class="mi">1</span><span class="o">)</span> <span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+<span class="lineno"> 86</span>   <span class="k">return</span> <span class="nf">isPal</span><span class="o">(</span><span class="n">myStr</span><span class="o">.</span><span class="na">subString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="n">myStr</span><span class="o">.</span><span class="na">length</span><span class="o">()-</span><span class="mi">1</span><span class="o">));</span>
+<span class="lineno"> 87</span> <span class="o">}</span>
+<span class="lineno"> 88</span> 
+<span class="lineno"> 89</span> <span class="c1">// to ignore spaces can have a pointer at beginning and end and say while pointer0 &lt; pointer1 check, if one is space in/dec-crement 1 </span>
+<span class="lineno"> 90</span> 
+<span class="lineno"> 91</span> <span class="c1">///////////////////////////////////////////////// Remove duplicates in a string</span>
+<span class="lineno"> 92</span> <span class="n">have</span> <span class="n">a</span> <span class="kt">boolean</span><span class="o">[</span><span class="mi">256</span><span class="o">],</span> <span class="n">then</span> <span class="n">set</span> <span class="n">to</span> <span class="kc">true</span> <span class="k">if</span> <span class="n">its</span> <span class="n">there</span><span class="o">,</span> <span class="n">and</span> <span class="n">go</span> <span class="n">thoruhg</span> <span class="n">and</span> <span class="k">if</span> <span class="n">something</span> <span class="n">is</span> <span class="n">not</span> <span class="n">in</span> <span class="n">there</span> <span class="n">add</span> <span class="n">it</span> <span class="n">to</span> <span class="n">string</span> <span class="k">if</span> <span class="n">is</span><span class="o">,</span> <span class="n">ignore</span>
+<span class="lineno"> 93</span> 
+<span class="lineno"> 94</span> 
+<span class="lineno"> 95</span> <span class="c1">///////////////////////////////////////////////// push zeroes to the right</span>
+<span class="lineno"> 96</span> <span class="kt">void</span> <span class="nf">pushZerosToEnd</span><span class="o">(</span><span class="kt">int</span> <span class="n">arr</span><span class="o">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span>
+<span class="lineno"> 97</span> <span class="o">{</span>
+<span class="lineno"> 98</span>     <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>  <span class="c1">// Count of non-zero elements</span>
+<span class="lineno"> 99</span>  
+<span class="lineno">100</span>     <span class="c1">// Traverse the array. If element encountered is non-</span>
+<span class="lineno">101</span>     <span class="c1">// zero, then replace the element at index &#39;count&#39; </span>
+<span class="lineno">102</span>     <span class="c1">// with this element</span>
+<span class="lineno">103</span>     <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+<span class="lineno">104</span>         <span class="k">if</span> <span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span>
+<span class="lineno">105</span>             <span class="n">arr</span><span class="o">[</span><span class="n">count</span><span class="o">++]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">];</span> <span class="c1">// here count is </span>
+<span class="lineno">106</span>                                    <span class="c1">// incremented</span>
+<span class="lineno">107</span>  
+<span class="lineno">108</span>     <span class="c1">// Now all non-zero elements have been shifted to </span>
+<span class="lineno">109</span>     <span class="c1">// front and  &#39;count&#39; is set as index of first 0. </span>
+<span class="lineno">110</span>     <span class="c1">// Make all elements 0 from count to end.</span>
+<span class="lineno">111</span>     <span class="k">while</span> <span class="o">(</span><span class="n">count</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">)</span>
+<span class="lineno">112</span>         <span class="n">arr</span><span class="o">[</span><span class="n">count</span><span class="o">++]</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="lineno">113</span> 
+<span class="lineno">114</span> 
+<span class="lineno">115</span> 
+<span class="lineno">116</span> 
+<span class="lineno">117</span> <span class="c1">//////////////////////////////////// Longest Palindrome</span>
+<span class="lineno">118</span>  <span class="kd">public</span> <span class="n">String</span> <span class="nf">longestPalindrome</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+<span class="lineno">119</span>   <span class="k">if</span> <span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+<span class="lineno">120</span>     <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+<span class="lineno">121</span>   <span class="o">}</span>
+<span class="lineno">122</span>  
+<span class="lineno">123</span>   <span class="k">if</span> <span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+<span class="lineno">124</span>     <span class="k">return</span> <span class="n">s</span><span class="o">;</span>
+<span class="lineno">125</span>   <span class="o">}</span>
+<span class="lineno">126</span>  
+<span class="lineno">127</span>   <span class="n">String</span> <span class="n">longest</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+<span class="lineno">128</span>   <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+<span class="lineno">129</span>     <span class="c1">// get longest palindrome with center of i</span>
+<span class="lineno">130</span>     <span class="n">String</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">helper</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+<span class="lineno">131</span>     <span class="k">if</span> <span class="o">(</span><span class="n">tmp</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">longest</span><span class="o">.</span><span class="na">length</span><span class="o">())</span> <span class="o">{</span>
+<span class="lineno">132</span>       <span class="n">longest</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">;</span>
+<span class="lineno">133</span>     <span class="o">}</span>
+<span class="lineno">134</span>  
+<span class="lineno">135</span>     <span class="c1">// get longest palindrome with center of i, i+1</span>
+<span class="lineno">136</span>     <span class="n">tmp</span> <span class="o">=</span> <span class="n">helper</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+<span class="lineno">137</span>     <span class="k">if</span> <span class="o">(</span><span class="n">tmp</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">longest</span><span class="o">.</span><span class="na">length</span><span class="o">())</span> <span class="o">{</span>
+<span class="lineno">138</span>       <span class="n">longest</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">;</span>
+<span class="lineno">139</span>     <span class="o">}</span>
+<span class="lineno">140</span>   <span class="o">}</span>
+<span class="lineno">141</span>   <span class="k">return</span> <span class="n">longest</span><span class="o">;</span>
+<span class="lineno">142</span> <span class="o">}</span>
+<span class="lineno">143</span> <span class="c1">// Given a center, either one letter or two letter, </span>
+<span class="lineno">144</span> <span class="c1">// Find longest palindrome</span>
+<span class="lineno">145</span> <span class="kd">public</span> <span class="n">String</span> <span class="nf">helper</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="kt">int</span> <span class="n">begin</span><span class="o">,</span> <span class="kt">int</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+<span class="lineno">146</span>   <span class="k">while</span> <span class="o">(</span><span class="n">begin</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">end</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">begin</span><span class="o">)</span> <span class="o">==</span> <span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">end</span><span class="o">))</span> <span class="o">{</span>
+<span class="lineno">147</span>     <span class="n">begin</span><span class="o">--;</span>
+<span class="lineno">148</span>     <span class="n">end</span><span class="o">++;</span>
+<span class="lineno">149</span>   <span class="o">}</span>
+<span class="lineno">150</span>   <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">begin</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">end</span><span class="o">);</span>
+<span class="lineno">151</span> <span class="o">}</span>
+<span class="lineno">152</span> 
+<span class="lineno">153</span> 
+<span class="lineno">154</span> <span class="c1">////////////////////////////// Find shortest added string to make a palindrome (adding at end)</span>
+<span class="lineno">155</span> <span class="n">def</span> <span class="nf">shortestPal</span><span class="o">(</span><span class="n">s</span><span class="o">):</span>
+<span class="lineno">156</span>   <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="nf">range</span><span class="o">(</span><span class="n">len</span><span class="o">(</span><span class="n">s</span><span class="o">)):</span>
+<span class="lineno">157</span>     <span class="n">reverse</span> <span class="o">=</span> <span class="n">s</span><span class="o">[</span><span class="nl">i:</span><span class="o">:-</span><span class="mi">1</span><span class="o">]</span>
+<span class="lineno">158</span>     <span class="n">print</span> <span class="n">reverse</span>
+<span class="lineno">159</span>     <span class="n">pali</span> <span class="o">=</span> <span class="n">s</span><span class="o">+</span><span class="n">reverse</span>
+<span class="lineno">160</span> 
+<span class="lineno">161</span>     <span class="k">if</span> <span class="nf">pal</span><span class="o">(</span><span class="n">pali</span><span class="o">):</span>
+<span class="lineno">162</span>       <span class="k">return</span> <span class="n">pali</span>
+<span class="lineno">163</span>   <span class="k">else</span><span class="o">:</span>
+<span class="lineno">164</span>     <span class="n">print</span> <span class="s">&quot;oops&quot;</span>
+<span class="lineno">165</span> 
+<span class="lineno">166</span> 
+<span class="lineno">167</span>   <span class="c1">//////// adding at front</span>
+<span class="lineno">168</span>   <span class="n">def</span> <span class="nf">shortestPal</span><span class="o">(</span><span class="n">s</span><span class="o">):</span>
+<span class="lineno">169</span>   <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="nf">range</span><span class="o">(</span><span class="n">len</span><span class="o">(</span><span class="n">s</span><span class="o">)):</span>
+<span class="lineno">170</span>     <span class="n">reverse</span> <span class="o">=</span> <span class="n">s</span><span class="o">[</span><span class="nl">i:</span><span class="mi">0</span><span class="o">:-</span><span class="mi">1</span><span class="o">]</span>
+<span class="lineno">171</span>     <span class="n">print</span> <span class="n">reverse</span>
+<span class="lineno">172</span>     <span class="n">pali</span> <span class="o">=</span> <span class="n">reverse</span><span class="o">+</span><span class="n">s</span>
+<span class="lineno">173</span> 
+<span class="lineno">174</span> 
+<span class="lineno">175</span>     <span class="k">if</span> <span class="nf">pal</span><span class="o">(</span><span class="n">pali</span><span class="o">):</span>
+<span class="lineno">176</span>       <span class="k">return</span> <span class="n">pali</span>
+<span class="lineno">177</span>   <span class="k">else</span><span class="o">:</span>
+<span class="lineno">178</span>     <span class="n">print</span> <span class="s">&quot;oops&quot;</span>
+<span class="lineno">179</span> 
+<span class="lineno">180</span> <span class="c1">//////////////////////////////////// Permutation </span>
+<span class="lineno">181</span>     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">permutation</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span> 
+<span class="lineno">182</span>     <span class="n">permutation</span><span class="o">(</span><span class="s">&quot;&quot;</span><span class="o">,</span> <span class="n">str</span><span class="o">);</span> 
+<span class="lineno">183</span> <span class="o">}</span>
+<span class="lineno">184</span> 
+<span class="lineno">185</span> <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">permutation</span><span class="o">(</span><span class="n">String</span> <span class="n">prefix</span><span class="o">,</span> <span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+<span class="lineno">186</span>     <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+<span class="lineno">187</span>     <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">prefix</span><span class="o">);</span>
+<span class="lineno">188</span>     <span class="k">else</span> <span class="o">{</span>
+<span class="lineno">189</span>         <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+<span class="lineno">190</span>             <span class="n">permutation</span><span class="o">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="n">str</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">),</span> <span class="n">str</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">i</span><span class="o">)</span> <span class="o">+</span> <span class="n">str</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">,</span> <span class="n">n</span><span class="o">));</span>
+</pre></div>
+
+<script>
+// Indent wrapped lines in order to keep them out of the line-numbering column.
+
+// One of these methods should work for a given browser; though this means
+// possibly running the hangingIndent routine 3 times, it also ensures we successfully
+// wrap all code blocks, all the time, on all tested browsers.
+document.addEventListener('DOMContentLoaded', hangingIndentAllCodeBlocks, false);
+window.addEventListener('load', hangingIndentAllCodeBlocks, false);
+hangingIndentAllCodeBlocks();
+
+// Apply hanging indent CSS to wrapped lines in each div.highlight code block
+function hangingIndentAllCodeBlocks() {
+    var blocks = document.getElementsByClassName('highlight');
+    for (var i = 0; i < blocks.length; i++) {
+        hangingIndentCodeBlock(blocks[i]);
+    }
+}
+
+// Apply hanging indent CSS to wrapped lines in given block
+function hangingIndentCodeBlock(block) {
+    var lineNums = block.querySelectorAll('.lineno');
+    if (lineNums.length == 0) {
+        return;
+    }
+
+    // Calculate actual width of a character in the line numbers column
+    var first = lineNums[0];
+    var text = first.innerText || first.textContent;
+    var charWidth = first.offsetWidth / text.length;
+
+    // Adjustment width is width of line number column plus 1 more character-width
+    // for the trailing space that comes after the span.lineno element
+    var adjustWidth = charWidth * (text.length + 1);
+
+    // Indent the entire block by adjustWidth ...
+    block.firstChild.style.marginLeft = adjustWidth + 'px';
+
+    // ... and correspondingly de-indent just the starting line-number <span> of
+    // each line-of-code, resulting in only wrapped lines of code being indented
+    // past the column of line numbers
+    for (var i = 0; i < lineNums.length; i++) {
+        lineNums[i].style.marginLeft = -adjustWidth + 'px';
+    }
+}
+</script>
+</body>
+</html>
