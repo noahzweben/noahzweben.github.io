@@ -34,7 +34,7 @@ $(document).ready(function(){
 	   if (height > 420 && height <=965){
 	   	 	$("#nzdawg").css("color", "#4175fc");
 	   }
-	if (height > 965 && height <1500){
+	if (height > 965 && height <= 1500){
 		$("#nzdawg").css("color", "#3ca365");
 	} 
 	if (height > 1500){
