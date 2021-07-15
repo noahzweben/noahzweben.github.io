@@ -44,7 +44,7 @@ body{
 
 #nzdawg{
 	color: #ff9d00;
-	font-family: Raleway;
+	font-family: Lato;
 	font-weight: 900;
 	
 }
@@ -63,7 +63,7 @@ body{
 
 .name{
 	color: #edf2ff;
-	font-family: Raleway;
+	font-family: Lato;
 	font-size: 8em;
 	line-height: 100px;
 	margin-top: 20px;
@@ -87,7 +87,7 @@ body{
 }
 
 .title{
-	font-family: Raleway;
+	font-family: Lato;
 	font-size: 4em;
 	margin: 20px;
 	color: #4175fc;
@@ -124,7 +124,7 @@ body{
 
 
 .aboutText{
-	font-family: Raleway;
+	font-family: Lato;
 	font-size: 2em;
 	font-weight: 300;
 	padding-bottom: 20px;
