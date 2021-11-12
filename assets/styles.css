@@ -99,25 +99,16 @@ body{
 	border-bottom: 20px solid #231b5b;
 	font-family: Helvetica;
 	padding-top: 30px;
-	/*background-color: #12037f;# 0c015b*/
-	background-image: 
-		linear-gradient(135deg,rgba(0,0,0,.8),rgba(0,0,0,.5)),
-		linear-gradient(0deg,rgba(18, 3, 127,.96),rgba(12, 1, 91,.86)),
-		url("doodle.png");
-}
+	padding-bottom: 15px;
+	background-color: #040024;
+	}
 
 
 .filler1{
-	/*background-color: #008799;*/
-	/*border-right: 20px solid #a00332;*/
-	/*background-color: #bc0903;*/
 	min-height: 100px;
 	background-image: 
 		linear-gradient(130deg,rgba(0,10,70,.4),rgba(0,10,70,.2)),
 		linear-gradient(0deg,#008799,#008799);
-/*	background-image: 
-		linear-gradient(130deg,rgba(0,0,0,.3),rgba(0,0,0,.1)),
-		linear-gradient(0deg,rgba(160, 3, 79,1),rgba(160, 3, 50,1));*/
 }
 
 
@@ -159,11 +150,6 @@ body{
 .filler2{
 	min-height: 30px;
 	background-color: #3ca365;
-	/*border-bottom: 20px solid #3ca365;*/
-	/*background-image: 
-		linear-gradient(130deg,rgba(20,10,70,.5),rgba(20,10,70,.4)),
-		linear-gradient(0deg,rgba(0, 216, 75,.96),rgba(0, 216, 75,.94)),
-		url("zigzag.jpg");*/
 }
 
 
@@ -180,8 +166,7 @@ body{
 	min-height: 100px;
 	background-image:
 		linear-gradient(45deg,rgba(0,0,0,.3),rgba(0,0,0,.4)),
-		linear-gradient(rgba(173, 10, 75,.96),rgba(173, 10, 7,.95)),
-		url("spiral.png");
+		linear-gradient(rgba(173, 10, 75,.96),rgba(173, 10, 7,.95));
 	border-top: 20px solid #ad0938;
 }
 
