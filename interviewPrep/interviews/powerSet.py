@@ -30,7 +30,7 @@ def permutation(string):
 
 def permutationRec(sub,string):
     if len(string)==0:
-        print sub
+        print(sub)
     else:
         for i in range(len(string)):
             permutationRec(sub+string[i],string[0:i]+string[i+1:])
@@ -61,7 +61,7 @@ def palBack(word):
         reverseStr = reverse(word[0:i])
         palCheck = word+reverseStr
         if isPalindrome(palCheck):
-            print palCheck
+            print(palCheck)
 
     
 def palFront(word):
@@ -74,18 +74,28 @@ def palFront(word):
 
 
 def binarize(string,n):
+    print(f"{string} -- {n}")
     if n<=0:
-        print string
+        print(string)
     else:
         string = str(n%2)+string
-        binarize(string,n/2)
-    
+        binarize(string,math.floor(n/2))
+
+def toBin(string):
+    total=0
+    for i in range(len(string)):
+        digit = string[i*-1 - 1]
+        print(digit)
+        total += int(digit)*(2**i)
+    return total
+
+
 def brackets(n):
     bracketsRec("",n,n)
 
 def bracketsRec(string,left,right):
     if left == 0 and right ==0:
-        print string
+        print(string)
         
     if left>0:
         bracketsRec(string+"(",left-1,right)

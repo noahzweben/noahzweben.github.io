@@ -31,18 +31,18 @@ def subArraySum(arr, target):
 #target subarray sum with hash
 def subArraySumHash(arr,target):
     Map = {}
-    n = len(arr)
     curr_sum = 0
-    for i in range(n):
+    for i in range(len(arr)):
         curr_sum += arr[i]
         if curr_sum == target:
             return (0,i) #sum between zero and i
         if (curr_sum - target in Map.keys()): #[2,1,3,-1], target=4... {2:0,2:1} 5-4 = -1, find index when we are X to much past
+            print(arr[i], curr_sum,curr_sum-target)
+            print(Map)
             return (Map[curr_sum-target]+1, i)
         Map[curr_sum] = i
 
-
-
+subArraySumHash([1,2,3,-4,8],7)
 
 #move zeroes to end of array
 def moveZeroes(array):

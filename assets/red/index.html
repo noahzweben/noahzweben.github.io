@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+	.main{
+		display:  flex;
+	}
+
+	.photo{
+		height:  auto;
+		width:  150px;
+	}
+
+	.container{
+		width:  33%;
+		z-index: 1;
+		position: relative;
+
+	}
+
+	.cup{
+		z-index: 1000;
+		position: relative;
+		bottom:  -200px;
+		animation: downA 2s ease-in forwards;
+		
+	}
+
+	
+	.noA {
+		animation-name:  none;
+	}
+
+	#c1,#c2,#c3{
+		position:  relative;
+		text-align: center;
+
+	}
+
+	#bob{
+		margin: auto;
+		width:  150px;
+		display: block;
+		background: red;
+		text-align: center;
+		height:  50px;
+		border-radius:  4px;
+		border:  none;
+		color:  white;
+	}
+
+	@keyframes downA{
+		0%{bottom:  -200px;}
+		30%{bottom: 0px;}
+		70%{bottom: 0px;}
+		100%{bottom:  -200px;}
+	}
+
+</style>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+	<script src="https://unpkg.com/lodash.combinations"></script>
+</head>
+<body>
+	<button id="bob">Start</button>
+	<div class="main">
+<div class="container">
+<div id="c1" >
+<img class="cup noA" src="red.png"/>
+<img class="photo" src="coral.png"/>
+</div>
+</div>
+<div class="container">
+<div id="c2" >
+<img class="cup noA" src="red.png"/>
+<img class="photo" src="sofia.png"/>
+</div>
+</div>
+<div class="container">
+<div id="c3" >
+<img class="cup noA" src="red.png"/>
+<img class="photo" src="olimpia.png"/>
+</div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+	const SWAPS = 16;
+	let swapOrder;
+	let i = 0;
+	let x = ["#c1", "#c2", "#c3"];
+
+	
+
+
+	$('#bob').on('click', () =>{
+		$('.cup').removeClass("noA");
+		swapOrder = createSwaps();
+		setTimeout(()=>{
+			$('.cup').addClass("noA");
+			swap();},2000);
+	});
+
+function createSwaps(){
+	let swapsArray = [];
+	let j = _.combinations(x,2);
+	while(swapsArray.length < SWAPS){
+		if (j.length == 0){
+			j = _.combinations(x,2);
+		}
+		swapsArray.push(j.pop());
+	}
+	return swapsArray;
+}
+
+
+
+function swap() {
+	if (swapOrder.length <= 0) return;
+    	let [a,b] = swapOrder.pop();
+    	let clickedDiv = $(a);
+        let prevDiv = $(b);
+        let distanceA = prevDiv.offset().left - clickedDiv.offset().left + clickedDiv.position().left;
+        let distanceB = clickedDiv.offset().left - prevDiv.offset().left + prevDiv.position().left;
+
+    
+        // clickedDiv.animate
+        $.when(clickedDiv.animate({
+           left: distanceA
+        }, 550)
+        ,
+        prevDiv.animate({
+            left: distanceB
+        }, 550)
+        );
+  
+    
+ 
+    	setTimeout(swap, 600);
+};
+
+$(".cup").click(function (e){
+		$(this).addClass("noA");
+		$(this).removeClass('noA');
+		setTimeout(() => {
+			$(this).addClass("noA");
+		}, 2000);
+	
+});
+
+
+</script>
+</body>
+</html>
