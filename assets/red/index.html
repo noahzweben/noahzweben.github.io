@@ -106,10 +106,10 @@
 
 function createSwaps(){
 	let swapsArray = [];
-	let j = _.combinations(x,2);
+	let j = _.shuffle(_.combinations(x,2));
 	while(swapsArray.length < SWAPS){
 		if (j.length == 0){
-			j = _.combinations(x,2);
+			j = _.shuffle(_.combinations(x,2));
 		}
 		swapsArray.push(j.pop());
 	}
