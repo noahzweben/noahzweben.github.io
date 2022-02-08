@@ -8,6 +8,10 @@
 	.photo{
 		height:  auto;
 		width:  150px;
+		position:  relative;
+		text-align:  center;
+		display: block;
+		margin:  auto;
 	}
 
 	.container{
@@ -22,6 +26,9 @@
 		position: relative;
 		bottom:  -200px;
 		animation: downA 2s ease-in forwards;
+		margin:  auto;
+		display: block;
+
 		
 	}
 
@@ -69,19 +76,19 @@
 <div class="container">
 <div id="c1" >
 <img class="cup noA" src="red.png"/>
-<img class="photo" src="coral.png"/>
+<img id="coral" class="photo" src="coral.png"/>
 </div>
 </div>
 <div class="container">
 <div id="c2" >
 <img class="cup noA" src="red.png"/>
-<img class="photo" src="sofia.png"/>
+<img id="sofia" class="photo" src="sofia.png"/>
 </div>
 </div>
 <div class="container">
 <div id="c3" >
 <img class="cup noA" src="red.png"/>
-<img class="photo" src="olimpia.png"/>
+<img id="olimpia" class="photo" src="olimpia.png"/>
 </div>
 </div>
 
@@ -97,6 +104,9 @@
 
 
 	$('#bob').on('click', () =>{
+		$("#coral").attr("src","./coral.png");
+		$("#sofia").attr("src","./sofia.png");
+		$("#olimpia").attr("src","./olimpia.png");
 		$('.cup').removeClass("noA");
 		swapOrder = createSwaps();
 		setTimeout(()=>{
@@ -119,7 +129,10 @@ function createSwaps(){
 
 
 function swap() {
-	if (swapOrder.length <= 0) return;
+	if (swapOrder.length <= 0) {
+		$(".photo").attr("src","./sofia.png");
+		return;
+	}
     	let [a,b] = swapOrder.pop();
     	let clickedDiv = $(a);
         let prevDiv = $(b);
